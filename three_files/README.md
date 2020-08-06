@@ -54,7 +54,7 @@ Let's see one example. On this shot, printf is wrong on main.c. You can fix func
 
 # In this file, how I can read func.c on main.c?
 
-    ![image](/uploads/699f8d16b801fea24a9e467f35ba482b/image.png)
+![image](/uploads/699f8d16b801fea24a9e467f35ba482b/image.png)
 
 
 
@@ -71,7 +71,7 @@ In this code, only main.c needs <stdio.h> cause this code only have standard out
 
 MY professor gave me a workout for practice this concept.
 
-    ![image](/uploads/f4aa3590a685735fc8aeaaeb58aea462/image.png)
+![image](/uploads/f4aa3590a685735fc8aeaaeb58aea462/image.png)
 
 ## func.h
 
