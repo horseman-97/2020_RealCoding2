@@ -21,12 +21,38 @@ Preprocessing, Compile, Link (with library), Loader
 
 2. CPP can Define Macro
 
+    - It can be used for defining a constant or parameterized macro.<br>
+    
+    ```
+    //object
+    //#define <identifier> <replacement token list>
+    #define PI 3.14159
+
+    //function-like macro
+    //#define <identifier> <parameter list> <replacement token list>
+    #define f(a) ((a) * (a))
+    ```
     -Use `#define` for this. But this is very critical. So I need some practice for this.<br>
-    Order Expansion and stringification. Special Macro can be used for searching bug and errorline.
+    
+    ```
+    //BAD example
+    #define fa a*a
+    ```
+    
+    -NEVER use multiple name on Macro.<br>
+    
+    ````
+    #define HE HI
+    #define LLO _THERE
+    #define HELLO "HI THERE"
+    ...
+    ```
 
 3. CPP can do Conditional Compliation
 
     -I can compile section by section with `#ifdef` and `#endif`, etc.
+    ```
+    #
 
 4. Line Control
 
