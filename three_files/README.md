@@ -8,10 +8,10 @@ Preprocessing, Compile, Link (with library), Loader
 
 1. CPP can include files.
     
-    - `#include` makes compiler add header file while compile.
+    - `#include` makes compiler add header file while compile.<br>
     - I can use `""` and `<>` for this. <br>
-    - `<>` can be used for standard library header.
-    - `""` can be used for user-defined header.
+    - `<>` can be used for standard library header.<br>
+    - `""` can be used for user-defined header.<br>
     
     ```
     #include <stdio.h>
@@ -32,14 +32,18 @@ Preprocessing, Compile, Link (with library), Loader
     //#define <identifier> <parameter list> <replacement token list>
     #define f(a) ((a) * (a))
     ```
-    -Use `#define` for this. But this is very critical. So I need some practice for this.<br>
+    - Use `#define` for this. But this is very critical. So I need some practice for this.<br>
     
     ```
     //BAD example
     #define fa a*a
+    b = f(20+13)
+    //What you expected : (20+13)*(20+13)
+    //What really happened : 20+13*20+13
+    
     ```
     
-    -NEVER use multiple name on Macro.<br>
+    - NEVER use multiple name on Macro.<br>
     
     ````
     #define HE HI
@@ -50,17 +54,28 @@ Preprocessing, Compile, Link (with library), Loader
 
 3. CPP can do Conditional Compliation
 
-    -I can compile section by section with `#ifdef` and `#endif`, etc.
+    - I can compile section by section with `#ifdef` and `#endif`, etc.<br>
+    - If directive starts with `#if`, it should be paired the one starts with `#end`<br>
+    - In func.c you can check the usage of this.<br>
+    
     ```
-    #
-
-4. Line Control
-
+    //#if, #ifdef, #ifndef, #elif, #else, #endif
+    #ifdef VERSION
+    #if _VERSION >=3
+        printf("Version is greater or equal than 3\n");
+    #elif _ VERSION ==2
+    #error VERSION 2 IS NOT SUPPORTED
+    #endif
+    #endif
+    //#ifdef paired with the last #endif, #if paired with first #endif.
+    //#elif also paired with #error.
+    ```
 # gcc Compile option(major 6)
 
+![image](/uploads/0082faefd87276c0fd22a125248fa556/image.png)
 
 1. -c : generate .o file.
-    -This is for fast compile.<br>
+    -This is for assemble.<br>
     If I has very long code but nothing change, I can use this option and compile more faster by  making this code .o file
 
 
