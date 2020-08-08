@@ -2,10 +2,14 @@
 ## NamDohyeon - Team 3
 Personal Project #2
 
-# C compile and Execution
-Preprocessing, Compile, Link (with library), Loader
-# C preprocessor(CPP)
+## 20200805
 
+# C preprocessor(CPP)
+    - It allows conditional compilation with #ifdef,
+    - defining constants with #define,
+    - including header files with #include,
+    - and using builtin macros such as __FILE__. 
+    
 1. CPP can include files.
     
     - `#include` makes compiler add header file while compile.<br>
