@@ -7,8 +7,17 @@ Preprocessing, Compile, Link (with library), Loader
 # C preprocessor(CPP)
 
 1. CPP can include files.
-
-    - I can use `""` and `<>` for this. <> can be used for standard library.
+    
+    - `#include` makes compiler add header file while compile.
+    - I can use `""` and `<>` for this. <br>
+    - `<>` can be used for standard library header.
+    - `""` can be used for user-defined header.
+    
+    ```
+    #include <stdio.h>
+    #include <math.h>
+    #include "mydefined.h"
+    ```
 
 2. CPP can Define Macro
 
