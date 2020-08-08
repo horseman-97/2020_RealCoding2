@@ -60,6 +60,7 @@ It only has gcc compiler and debugger. Therefore, it cannot handle complex comma
     - Compiler changes source code's address with assembly and makes link.
 
 3. Done linking.
+    - find the function or variables on library and link with the code I wrote.
 
 4. Loader brings it to memory.
-    - Allocation.
+    - Decide the arguments locate position in the memory and allocate.
