@@ -2,8 +2,6 @@
 
 ### Dohyun Nam - Team 3
 
-2020. 08. 03 lecture
-
 # Why we learn C again? 
 
 1. C language is low level language.
