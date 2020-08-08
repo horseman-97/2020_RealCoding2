@@ -31,7 +31,6 @@ There are many UNIX-liked System. Minix, Zenix, Linux...etc.
 
 These all UNIX-based OS have something in common. Their kernel is based on C-language.
 So If you want make OS, you need C compiler(CC)
-------------------------------------------
 
 # Which C?
 
