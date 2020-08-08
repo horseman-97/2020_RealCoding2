@@ -23,16 +23,26 @@ remind this picture while reading statement below.
 
 1. `gcc -E` : Pre-processing.
     It moves until preprocessing and does not compile and assemble.<br>
+    This option produces the standard output
     ex) `gcc -E 00.option-o.c`
-    put picture on here.<br>
+    
+![image](/uploads/184118ec25ddad0e759c5c5a0ece5483/image.png)
+
+the result should be like this.
+![image](/uploads/c959727113d0f8765df0edb7bafb2580/image.png)
 
     You can make .i file by using `>`. `>` does standard out converting.<br>
     ex) gcc -E 00.option-o.c > 00.option-o.i
+    
+As the result, 00.option-o.i generated on the list.
+![image](/uploads/7a9845b7e50381162ac5d733ad4ef76d/image.png)
+    
+And the result is same with the normal `-E` option
+![image](/uploads/1a25011ba83d459f98bcb70dfb85acb1/image.png)
 
 2. `gcc -S`  : Compile
     It moves until compile and does not assemble and link.<br>
     ex) `gcc -S 00.option-o.c`
-    put picture on here.<br>
 
     It generates .s file on the directory.
     
