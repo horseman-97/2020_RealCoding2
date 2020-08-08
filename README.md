@@ -2,6 +2,8 @@
 
 ### Dohyun Nam - Team 3
 
+## 20200803
+
 # Why we learn C again? 
 
 1. C language is low level language.
@@ -46,8 +48,18 @@ MinGW
 Minimalist GNU for Windows. Provide essential functions of GNU compilers
 It only has gcc compiler and debugger. Therefore, it cannot handle complex command.
 
+## 20200804
+
 # How C program executed?
 
 ![image](/uploads/0082faefd87276c0fd22a125248fa556/image.png)
 1. preprocessing. 
+    - The C preprocessor modifies a source file before handing it over to the compiler.
+
 2. compile source code. 
+    - Compiler changes source code's address with assembly and makes link.
+
+3. Done linking.
+
+4. Loader brings it to memory.
+    - Allocation.
