@@ -45,3 +45,9 @@ One of the most important characteristic in C99 is thread.
 MinGW
 Minimalist GNU for Windows. Provide essential functions of GNU compilers
 It only has gcc compiler and debugger. Therefore, it cannot handle complex command.
+
+# How C program executed?
+
+![image](/uploads/0082faefd87276c0fd22a125248fa556/image.png)
+1. preprocessing. 
+2. compile source code. 
