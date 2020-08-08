@@ -78,10 +78,15 @@ Personal Project #2
 
 ![image](/uploads/0082faefd87276c0fd22a125248fa556/image.png)
 
-1. -c : generate .o file.
-    -This is for assemble.<br>
-    If I has very long code but nothing change, I can use this option and compile more faster by  making this code .o file
+Basic syntax of GCC
+```
+$ gcc [options] [source files] [object files] [-o output file]
+```
 
+1. -c : generate .o file.
+    - Compile source files to object files(.o) without linking. We call this assemble.<br>
+    - If I has very long code but nothing change, I can use this option and compile more faster by  making this code .o file.
+    
 
 2. -E : preprocessor.
     -If I include `math.h` in `file.c`, and make `gcc -E file.c` command, <br>
