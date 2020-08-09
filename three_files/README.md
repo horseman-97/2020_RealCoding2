@@ -349,8 +349,8 @@ dep :
 ### pre-defined Macro
 - `CC` : program to compiling C programs; default is 'cc'.
 - `CFLAGS` : extra flags to give to the C compiler(set options).
-- 'SRCS' : source codes.
-- 
+- `SRCS` : source codes.
+
 ```
 OBJS = test1.o test2.o test3.o
 CFLAGS = -c -g -Wall
