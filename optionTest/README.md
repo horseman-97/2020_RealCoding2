@@ -88,15 +88,15 @@ remind this picture while reading statement below.
     ```
     ![image](/uploads/6cd82c4f25aa97bc9ab4baab82358539/image.png)
     - If I use -D option on compile, I can define NO and I can get normal output.
-    - For define NO marco, I used ``gcc -D NO 05.option-D.c`.
+    - For define NO marco, I used ``gcc -D NO 05.option-D.c`.<br>
     ![2020-08-09-123143_498x122_scrot](/uploads/f773f410e5a6fbf9c94e6d4d792cbd01/2020-08-09-123143_498x122_scrot.png)
 4. `gcc -Wall` : set warning level 
     - There are several warning message options execept -Wall, such as -w and -Wextra.
-    - `-Wall` option can be used print every warning message.
+    - `-Wall` option can be used print every warning message.<br>
     ![image](/uploads/acc967145e2c7ea25cbce92dfad29e15/image.png)
 5. `link` : Can compile several files together. 
     - On the previous homework , we compile main.c and func.c together with `gcc main.c func.c` commnad.<br>
-    - Then we used link option.
+    - Then we used link option.<br>
     ![2020-08-09-124257_553x135_scrot](/uploads/0f32a522f6fc5c0691e7a4c5a434346b/2020-08-09-124257_553x135_scrot.png)
 6. `gcc -O[level]` : set optimization level while compile. 
     - [level] could be set 0 to 3.
