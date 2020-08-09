@@ -60,6 +60,6 @@ remind this picture while reading statement below.
     ![image](/uploads/633178b569bf45e15e97315893f1ca6a/image.png)
     
 ### Other useful gcc compile options
-
-1. `gcc -o <file>` : Make output on <file>
-    - 
+1. `gcc -o` : print 
+    
+    ![2020-08-09-031243_567x146_scrot](/uploads/1d4f6153387b0a6f02f586d208d4b9cf/2020-08-09-031243_567x146_scrot.png)
