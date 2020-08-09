@@ -207,3 +207,169 @@ Result
 
 What is `-D` option?<br> 
 `gcc -DPRINT_ID` means define macro PRINT_ID. By define PRINT_ID macro, ID comes out instead of name.
+
+## 20200807
+
+## automatic build tool make and Makefile
+
+We can use make cause Makefile exists.
+1. create Makefile with `touch Makefile`
+2. touch has 2 functions.
+    - `touch [non-exist file]` creates empty vim file.
+    - `touch [exist file]` changes last edit time.
+
+# Makefile 
+
+### makefile basic
+- [target] : [pre-requiremet files(or dependency files)]<br>
+    <tab> [command] // We call this line <Recipe>
+- For make target, we need dependency.
+- The most important parts on the makefile is that command starts with `tab`.<br>
+    It means that each <Recipe> must have indent made by <tab>.
+
+```
+test : test1.o test2.o test3.o
+    gcc -o test test1.o test2.o test3.o 
+
+test1.o : test1.c a.h b.h
+    gcc -c test1.c
+
+test2.o : test2.c a.h c.h
+    gcc -c test2.c
+
+test3.o : test3.c a.h b.h c.h
+    gcc -c test3.c
+```
+
+### dummy target (clean)
+- clean is dummy target. It means the target without dependency. 
+- If use `-rm` instead of `rm`, program runs regardless an error. 
+
+    Here is a example.<br>
+    After save this and put `make clean` command, we can find out .o and mytest file. <br>
+```
+test : test1.o test2.o test3.o
+    gcc -o test test1.o test2.o test3.o 
+
+test1.o : test1.c a.h b.h
+    gcc -c test1.c
+
+test2.o : test2.c a.h c.h
+    gcc -c test2.c
+
+test3.o : test3.c a.h b.h c.h
+    gcc -c test3.c
+    
+clean : 
+    rm test1.o test2.o test3.o test
+```
+
+### dependency check (gccmakedep)
+- check dependency relationship with dep target. 
+- This is useful when we have many header files.
+```
+test : test1.o test2.o test3.o
+    gcc -o test test1.o test2.o test3.o 
+
+test1.o : test1.c #header file removed
+    gcc -c test1.c
+
+test2.o : test2.c #header file removed
+    gcc -c test2.c
+
+test3.o : test3.c #header file removed
+    gcc -c test3.c
+    
+clean : 
+    rm test1.o test2.o test3.o test
+    
+dep : 
+    gccmakedep test1.c test2.c test3.c 
+```
+
+### macro function
+- On makefile, we can set macro as variables. 
+- Repeating parts can be substitute with Macro. 
+- You can use {OBJS} instead of (OBJS)
+```
+OBJS = test1.o test2.o test3.o
+
+test: $(OBJS) 
+    gcc -o test $(OBJS)
+    
+test1.o : test1.c
+    gcc -c test1.c
+
+test2.o : test2.c 
+    gcc -c test2.c
+
+test3.o : test3.c 
+    gcc -c test3.c
+    
+clean : 
+    rm $(OBJS) test
+    
+dep : 
+    gccmakedep test1.c test2.c test3.c 
+```
+
+### Internal Macro
+
+- `$@` : name of the file to be made.
+- `$?` : names of the changed dependents.
+- `$^` : names of the all dependents. 
+- `$<` : the name of the related file that caused the action.
+- `$*` : the prefix shared by target and dependent files.
+```
+OBJS = test1.o test2.o test3.o
+
+test: $(OBJS) 
+    gcc -o $@ $^
+    
+test1.o : test1.c
+    gcc -c $< 
+
+test2.o : test2.c a.h c.h
+    gcc -c $?
+
+test3.o : test3.c a.h b.h c.h
+    gcc -c $*.c
+    
+clean : 
+    rm $(OBJS) test
+    
+dep : 
+    gccmakedep test1.c test2.c test3.c 
+```
+- `$^` means test1.o , test2.o , test3.o
+- `$<` means test1.c 
+- `$?` means test2.c 
+- `$*.c` means test3.c
+
+### pre-defined Macro
+- `CC` : program to compiling C programs; default is 'cc'.
+- `CFLAGS` : extra flags to give to the C compiler(set options).
+- 'SRCS' : source codes.
+- 
+```
+OBJS = test1.o test2.o test3.o
+CFLAGS = -c -g -Wall
+test: $(OBJS) 
+    $(CC) -o $@ $^
+    
+test1.o : test1.c
+    $(CC) -c $< 
+
+test2.o : test2.c a.h c.h
+    $(CC) -c $?
+
+test3.o : test3.c a.h b.h c.h
+    $(CC) -c $*.c
+    
+clean : 
+    rm $(OBJS) test
+    
+dep : 
+    gccmakedep test1.c test2.c test3.c 
+```
+
