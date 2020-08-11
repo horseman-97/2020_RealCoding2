@@ -53,7 +53,7 @@ printf("%d\n", *p);
 ```
 The output of this code is 1, 1, 2, 2.
 
-##Pointer practice codes.
+## Pointer practice codes.
 
 ### test0.c
 
