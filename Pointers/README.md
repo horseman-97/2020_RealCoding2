@@ -38,7 +38,8 @@ int *p = &i;
  int i, *p = &i;
 ```
 ### Operation * features
-![image](/uploads/a4714c7a8b82ef08e556fef763fdd669/image.png)
+<br>
+![image](/uploads/a4714c7a8b82ef08e556fef763fdd669/image.png)<br>
 `*` operator can be used to access what's stored in the address space. If I done `*p = i;`, then `*p` is alias for `i`.<br>
 This is very important concept. Not only does `*p` have the same value as `i`, but changing the value of `*p` also changes the value of `i`.
 
