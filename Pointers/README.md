@@ -39,9 +39,11 @@ int *p = &i;
 ```
 ### Operation * features
 <br>
-![image](/uploads/a4714c7a8b82ef08e556fef763fdd669/image.png)<br>
-`*` operator can be used to access what's stored in the address space. If I done `*p = i;`, then `*p` is alias for `i`.<br>
-This is very important concept. Not only does `*p` have the same value as `i`, but changing the value of `*p` also changes the value of `i`.
+![image](/uploads/a4714c7a8b82ef08e556fef763fdd669/image.png)
+<br>
+Look at the increment parts. The data type of pointer can define the interval of data.<br>
+* operator can be used to access what's stored in the address space. If I done *p = i;, then *p is alias for i.<br>
+This is very important concept. Not only does *p have the same value as i, but changing the value of *p also changes the value of i.
 
 ```
 p = &i
@@ -87,3 +89,20 @@ int main()
 	printf("%d, %d, %d, %d\n", a, &a, *(&a), *(int *)(long long)(&a) );
 }
 ```
+The result of this code is 
+```
+1 2
+1 2
+200 100
+6422284 6422280 200
+200 100
+200, 6422284, 200, 200
+```
+`func` is the function which change pointer's value to 100, increase 1 pointer value , and change it also 200.<br>
+We can make a question here. Why the value of `a` is also changed? There are no func(&a) on this code, but a values are change.<br>
+This is memory hacking concept. On the stack memory, every memory is sequentially assigned. This can be check on fourth line output.<br>
+The offset of `pa` and `pb` is 4, cause the int size is 4bytes on my computer OS. Therefore, `q++` of the `func` is the starting address of variable `a` and its value becomes 200.
+<br>
+Also, integer pointer can be integer. Look at `*(int *) pp`.
+
+## test1.c
