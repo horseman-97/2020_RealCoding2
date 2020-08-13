@@ -106,4 +106,32 @@ The offset of `pa` and `pb` is 4, cause the int size is 4bytes on my computer OS
 <br>
 Also, integer pointer can be integer. Look at `*(int *) pp`.
 
+## C memory models
+
+![image](/uploads/57bca0ab6eb72cda4b109e18cc5fe560/image.png)
+
+C language memory can be divided into three by the way to memorize and locate. <br>
+ 1. Automatic
+ 2. Static
+ 3. 
+
 ### test1.c
+
+```
+#include <stdio.h>
+
+int main()
+{       
+    int a[10] = { 0, 0, 0, 1, 4, 5, 6, 7, 8, 9}; 
+    // void *b; 
+    long long *c; 
+    // b = &a[0]; 
+    c = (long long *)a; 
+    printf("%d, %d\n", a, *a); 
+    printf("%x, %llx\n", c, *c); 
+    printf("%x, %llx\n", c+1, *(c+1)); 
+    float kk = 0.75f; 
+    printf("%f : %d, %x \n", kk, *(int *)&kk, *(int *)&kk);
+}
+```
+
