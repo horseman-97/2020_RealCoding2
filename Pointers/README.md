@@ -106,14 +106,24 @@ The offset of `pa` and `pb` is 4, cause the int size is 4bytes on my computer OS
 <br>
 Also, integer pointer can be integer. Look at `*(int *) pp`.
 
-## C memory models
+## C memory models 
 
 ![image](/uploads/57bca0ab6eb72cda4b109e18cc5fe560/image.png)
 
-C language memory can be divided into three by the way to memorize and locate. <br>
+In C language, variables can be defined by the scope and lifetime.<br>
  1. Automatic
+    - It is local variable.
+    - After the execution state leaves the function, automatic variable will lose its value.<br>
+        This means that automatic variable can only keep its memory until the function execution time.
+    - Stack has the automatic variable memory space.
+    - The front keyword is `auto`, but usually we do not use it. `auto int i` and `int i` is same.
+    - 
  2. Static
- 3. 
+    - It is local variable.
+    - Static variables can retain the value of the variable between different function calls.<br>
+        In other words, static variable has its memory in the same place until program execution.
+    - It does not disappear until the program ends. 
+    - Main memory has the static variable memory space.
 
 ### test1.c
 
