@@ -98,7 +98,8 @@ The result of this code is
 200 100
 200, 6422284, 200, 200
 ```
-`func` is the function which change pointer's value to 100, increase 1 pointer value , and change it also 200.<br>
+`func` is the function which change pointer's value to 100, increase 1 pointer value , and change it also 200.
+By using pointer, we can change value of `b` refer to its address value.<br>
 We can make a question here. Why the value of `a` is also changed? There are no func(&a) on this code, but a values are change.<br>
 This is memory hacking concept. On the stack memory, every memory is sequentially assigned. This can be check on fourth line output.<br>
 The offset of `pa` and `pb` is 4, cause the int size is 4bytes on my computer OS. Therefore, `q++` of the `func` is the starting address of variable `a` and its value becomes 200.
