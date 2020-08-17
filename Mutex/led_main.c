@@ -20,11 +20,15 @@ void led_red_task(void){
 }
 
 int main(int argc, char *argv[]){
-   pthread_t tid_green, tid_yellow;
-   int mode = atoi(argv[1]);
-   int count = atoi(argv[2]);
-   wiringPiSetup();
-   if (argc == 3) {
+    pthread_t tid_green, tid_yellow;
+    wiringPiSetup();
+    if (argc == 1){
+        led_red_task();
+        pthread_exit(NULL);
+    }
+    if (argc == 3) {
+        int mode = atoi(argv[1]);
+        int count = atoi(argv[2]);    
         if (mode == 1) {
 			pthread_create(&tid_green, NULL, led_green_task, (void*)count);
 
@@ -40,13 +44,5 @@ int main(int argc, char *argv[]){
     	led_red_task();
         pthread_exit(NULL);
    }
-   else
-   {
-       led_red_task();
-   }
-   
-    
-    
-
 }
 
