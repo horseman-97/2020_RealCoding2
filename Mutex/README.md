@@ -1,3 +1,15 @@
+# Multithreading with Raspberrypi GPIO
+
+## Multitasking concept
+
+## Multithread and Mutex
+
+### Makefile review
+
+## Actual code - explanation its function
+
+### What I learned and the difficulties.\
+
 At first, I wrote main function like this.
 ```
 int main(int argc, char *argv[]){
