@@ -1,9 +1,19 @@
 # Multithreading with Raspberrypi GPIO
+### 20200814
 
-## Multitasking concept
+## Basic concepts
+
+- `Program` :  A collection of code which installed in memory. 
+- `Process` :  A program in execution. If an installed program is running, this instance can be called as process.<br>
+    Each process has its own memory space, and does not share with the other processes
+    
+
 
 ## Multithread and Mutex
 
+What is multitasking? Multitasking system means that a system that can perform simultaneously.  We can say that this system has parallelism.
+<br>
+Multitasking even available single core by splitting CPU task time and making threads. 
 ### Makefile review
 
 ## Actual code - explanation its function
