@@ -3,9 +3,13 @@
 
 ## Basic concepts
 
-- `Program` :  A collection of code which installed in memory. 
 - `Process` :  A program in execution. If an installed program is running, this instance can be called as process.<br>
-    Each process has its own memory space, and does not share with the other processes
+    Each process has its own memory space, and does not share with the other processes.
+    Address space includes code, data, stack and heap area.
+    The 5 statuses of process are new ,ready, running, waiting, terminated.
+    single process is only available in single processor. One process cannot mapping multiple processor.
+- `Thread` : A collection of process execution parts 
+    Create a new process means create a new address space. 
     
 
 
