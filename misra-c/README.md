@@ -1,6 +1,6 @@
 # Software Testing
 
-## 20200818
+### 20200818
 
 ## Testing approach 
 <br>
@@ -19,9 +19,20 @@ On today's lecture, the main theorem was static test.
 
 ## Static Analysis basis
 
+As I said, static analysis does not execute the actual program. Instead, it just compile and find faults. 
+static test means finding fault without execute the program. The "static analysis" and "static test" are same meaning.<br>
+
+Static analysis can find software fault, and consume less cost than other methods.<br>
+One of the disadvantage is that it can do wrong pattern decision and make false alarm. Moreover, it cannot confirm the function of codes working properly.<br>
+That's because it only compile and overview the code, not perform the program. <br>
+
+In the business area, static analysis includes cyclomatic complexity to make manage and maintenance more easier. Cyclomatic complexity represents the codes complexity as number and graph.<br>
+Therefore, it is very good idea to put this method on the design process. Nowaday anlaysis tools inculde this method on static analysis process.<br>
+
+
 ### Standards and Mission Critical
 
-static test means finding fault without execute the program. The "static analysis" and "static test" are same meaning.<br>
+
 While we done static test, we have a specific standard which handles software error. Comparing the test result and the standard, we can find an error.<br>
 
 Every industrial area(usually it called 'domain') has its standard for software qualify.<br>
