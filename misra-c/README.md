@@ -61,7 +61,7 @@ The first test code generates 94 violations.<br>
 - On the code following MISRA C rules, all functions must have its declaration.
 - Function declaration should have same function name, function parameter name, and function type.
     For example, declaration1 and 2 are incorrect, as if these are perfect while real compile.
-    The declaration3 is only code follow MISRA C as well.
+    The declaration3 is only code following MISRA C as well.
 ```
 //declaration1
 int function(int x);
