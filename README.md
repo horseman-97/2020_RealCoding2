@@ -68,6 +68,7 @@ First, I can show you some examples. <br>
 
 <br>
 ![image](/uploads/104ba5193fb619f30e3f4ec1cad3e589/image.png)
+<br>
 I make a hello.c file like this. 
 
 1. `$ ./a.exe < input_data`
