@@ -8,5 +8,5 @@ int main()
         fprintf(stderr, "Error. It is positive\n");
     else 
         fprintf(stderr, "Error. It is negative\n");
-    fprintf(stdout, "Hello World %-d\n", a);
+    fprintf(stdout, "Hello World %d\n", a);
 }
