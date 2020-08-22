@@ -58,6 +58,12 @@ If you are curious some C functions, you have to visit its manpage and figure ou
 
 # Standard Input and Output
 
+## Redirection
+Before the C shell executes a command, it scans the command line for redirection characters. These special notations direct the shell to redirect input and output.<br>
+
+- `< File` : Opens the specified File (which is first variable, command, and file name expanded) as the standard input.
+- `> File` : Uses the specified File as standard output. If File does not exist, it is created. If File exists, it is truncated, and its previous contents are lost.
+
 First, I can show you some examples. <br>
 
 ![image](/uploads/67672578ed398455925a93e599d60f9a/image.png)
@@ -66,14 +72,48 @@ First, I can show you some examples. <br>
 3. Let's make standard input. Type `$ cat > input_data` on shell and put `200` on this shell. 
 4. Now with `cat input_data`, we can find `200` on this file.
 
+Normally, we can type keyboard and make standard input, but with the redirection characters, standard input can be changed as file system.
+
+<br>
+![image](/uploads/7b8cf5d7ecfe210206e5b469b5fe9ac2/image.png)
+![image](/uploads/6dc0fc4c8d2d8cbd4ec5eb41f255158e/image.png)
+<br>
+
+1. `$ ./a.exe < input_data` makes `input_data` file to standard input.
+2. The standard output is `Hello World`.
+3. Instead printing output to standard output(monitor), we can store it on the `output_data` file.
+    Type `$ ./a.exe < input_data > output_data`. 
+4. There are no standard output, but if you checkout output_data file with `cat output_data` command, 
+    You can figure out standard output stored on output_data file with the redirection keyword `>`.
+
+<br>
+Now, imagine that I change input_data from 200 to -200.
+After that, try again `$ ./a.exe < input_data > output_data`. command.
+
+<br>
+![image](/uploads/86992a3735229352fd02af5f2f84d836/image.png)
+<br>
+
+What can we know from this screenshot? The stderr message `Error. It is negative` does not stored on `output_data` file.
+Printing this as output_data, what we should do is  `$ ./a.exe < input_data &> output_data`.<br>
+
+- `>&FILE` : The form >& redirects both standard output and standard error to the specified File. 
+
+<br>
+![image](/uploads/5c741a87c197ce9ff730627deafc710e/image.png)
+<br>
+<br>
+
+Let's modify some codes on hello.c and try this.
 <br>
 ![image](/uploads/104ba5193fb619f30e3f4ec1cad3e589/image.png)
 <br>
-I make a hello.c file like this. 
+![image](/uploads/0a79192b65e9db345cf8086cc6daae02/image.png)
+<br>
 
-1. `$ ./a.exe < input_data`
-2. The standard output is `Hello World 200`
-3. 
+- Stderr : `Error. It is negative`
+- Stdout : `HELLO WORLD`.
+
 
 ## 20200804
 
@@ -91,3 +131,7 @@ I make a hello.c file like this.
 
 4. Loader brings it to memory.
     - Decide the arguments locate position in the memory and allocate.
+
+
+## References.
+`https://www.ibm.com/support/knowledgecenter/ssw_aix_72/osmanagement/c_inout_redir.html`
