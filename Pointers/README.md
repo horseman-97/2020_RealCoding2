@@ -1,5 +1,7 @@
 # Pointer
 
+### 20200811
+
 ## Pointer Basic
 
 Pointers are one of C's most important-and most often misunderstood-features.<br>
@@ -41,9 +43,11 @@ int *p = &i;
 <br>
 ![image](/uploads/a4714c7a8b82ef08e556fef763fdd669/image.png)
 <br>
-Look at the increment parts. The data type of pointer can define the interval of data.<br>
-* operator can be used to access what's stored in the address space. If I done *p = i;, then *p is alias for i.<br>
-This is very important concept. Not only does *p have the same value as i, but changing the value of *p also changes the value of i.
+
+If I define `int a = 100;`, it means we have `int` size(usually 4 bytes) room on the memory. 
+And `&a` means an address of the space. If you want print this address, what should you do? <br>
+Try `p = &a`. On this sentence, variable p has `int *` data type.<br>
+`*p` means the value in the address value. In this case it will be 100.<br>
 
 ```
 p = &i
@@ -54,7 +58,13 @@ printf("%d\n", *p);
 printf("%d\n", i);
 printf("%d\n", *p);
 ```
-The output of this code is 1, 1, 2, 2.
+The output of this code is 1, 1, 2, 2.<br>
+
+In conclusion, `*` operator can be used to access what's stored in the address space. If I done *p = i;, then *p is alias for i.<br>
+This is very important concept. Not only does *p have the same value as i, but changing the value of *p also changes the value of i.<br>
+
+Look at the increment parts. The data type of pointer can define the interval of data.<br>
+For this, professor offered us an example code.<br>
 
 ## Pointer practice codes.
 
@@ -104,7 +114,8 @@ We can make a question here. Why the value of `a` is also changed? There are no 
 This is memory hacking concept. On the stack memory, every memory is sequentially assigned. This can be check on fourth line output.<br>
 The offset of `pa` and `pb` is 4, cause the int size is 4bytes on my computer OS. Therefore, `q++` of the `func` is the starting address of variable `a` and its value becomes 200.
 <br>
-Also, integer pointer can be integer. Look at `*(int *) pp`.
+Also, integer pointer can be integer, vice versa. 
+`*(int *)pp` can return the value pp points.
 
 ## C memory models 
 
@@ -117,13 +128,39 @@ In C language, variables can be defined by the scope and lifetime.<br>
         This means that automatic variable can only keep its memory until the function execution time.
     - Stack has the automatic variable memory space.
     - The front keyword is `auto`, but usually we do not use it. `auto int i` and `int i` is same.
-    - 
+    
  2. Static
     - It is local variable.
     - Static variables can retain the value of the variable between different function calls.<br>
         In other words, static variable has its memory in the same place until program execution.
     - It does not disappear until the program ends. 
     - Main memory has the static variable memory space.
+    
+ 3. Manual
+    - Made by malloc = manual
+    - This type can change size by memory copy and paste. 
+    - The only way to change allocated memory.
+
+<br>
+![image](/uploads/8d00d5d787ef9940732e4347cb96b858/image.png)
+<Br>
+- startup : before main() called.
+- Both `int a = 100;` and `static int a = 100;` are also available.
+<br>
+<br>
+![image](/uploads/9077b765b40778270f17bafc8bd1846d/image.png)
+<br>
+
+If we define `int an_array[] = {0,1,2,3,4,5.....};` , Can you say the difference between `*(an_array+4)` and `*an_array+4`?<br>
+`*an_array` is 0, `*(an_array+4) is 4. Why? `int` type increases 4bytes when done `++` calculation.
+`*(an_array+4)` means 16bytes increment, while `*an_array+4` means 4bytes increment.
+
+<br>
+![image](/uploads/f57505405db41ed3ec4ef945a18a1037/image.png)
+<Br>
+In this case, the term `adjective` means `const`. It means unchangable.<br>
+- `int const A` : variable A is constant integer 
+
 
 ### test1.c
 
