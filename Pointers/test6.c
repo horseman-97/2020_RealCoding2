@@ -9,8 +9,6 @@ int f1(int a)
 int f22(int a)
 {	return a+22; }
 
-
-
 int main()
 {
 	double (*f[10])(int const *a, double (*g[10])(double h)); 

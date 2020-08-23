@@ -12,16 +12,15 @@ int main()
 {
 	int a = 1;
 	int b = 2; 
-	int *pa, *pb; 
-	long long pp; 
+	int *pa, *pb, pp; 
 	pa = &a; 
 	pb = &b; 
-	pp = (long long) pa; 
-	printf("%d %d\n", a, b);
-	printf("%d %d %d %d %d\n", *pa, *pb, pa, pb, *(int *)pp);
+	pp = (int) pa; 
+	printf("a: %d, b: %d, pp: %d\n", a, b, pp);
+	printf("*pa: %d, *pb: %d, pa: %d, pb: %d, *(*int *)pp: %d\n", *pa, *pb, pa, pb, *(int *)pp);
 	func(&b); 
-	printf("%d %d\n", *pa, *pb);
-	printf("%d %d %d %d %d\n", pa, pb, pp, (int) pp, *(int *) pp);
-	printf("%d %d\n", a, b);
-	printf("%d, %d, %d, %d\n", a, &a, *(&a), *(int *)(long long)(&a) );
+	printf("a: %d, b: %d, pp: %d\n", a, b, pp);
+	printf("*pa: %d, *pb: %d, pa: %d, pb: %d, *(int *): %d\n", *pa, *pb, pa, pb, *(int *) pp);
+	printf("(int *): %d, *(int *): %d\n", (int *)pp, *(int *)pp);
+	printf("a: %d, &a: %d, *(&a): %d, *(int *)(long long): %d\n", a, &a, *(&a), *(int *)(long long)(&a) );
 }

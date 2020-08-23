@@ -8,8 +8,6 @@ int f1(int a)
 int f22(int a)
 {	return a+22; }
 
-
-
 int main()
 {
 	int a = 200; 
