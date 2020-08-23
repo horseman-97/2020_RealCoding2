@@ -11,9 +11,8 @@ int main(void)
 {
     short n1=10, n2=20;
     int n3=0x10203040;
-    short *p;//pointer의 자료형 크기: 주소 안의 data의 크기를 나타냄
-p++할 때 증가값 결정
-    p = &n1;//오류없음
+    short *p;
+    p = &n1;
     printf("n1:%d, *p:%d\n", n1, *p);
     *p = 100;
     printf("n1:%d, *p:%d\n", n1, *p);
@@ -52,10 +51,7 @@ int main(void) {
     return 0;
 }
 ```
-//p2의 내용물은 int고 그 integer를 상수 취급한다
-즉 integer를const
-//p3를 const 취급하겠다. 즉 주소값을 const 로 한다. 
-n1을 넣은 주소를 바꿀 수 없다. 
+
 The value of the space which pointer `p2` pointing is int type, and we regard as constant.
 Therefore, `int * p1 = &n1;` means const integer.<br>
 We regard pointer `p3` as const. Therefore, the address value become const. 
