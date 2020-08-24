@@ -29,5 +29,5 @@ This is same on staticvartest function.
 <br>
 ![staticvartest](/uploads/cd90b1094b1015f9a253baf1fb668783/staticvartest.png)
 <Br>
-### 20200821
+
 
