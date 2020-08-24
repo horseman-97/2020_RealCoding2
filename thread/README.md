@@ -98,10 +98,9 @@ This is the most important issue while you use global variable on multithreading
 
 ### Simple discription of HW
 <br>
-Before we start, I want make some features clear. The term `parallelism` is different from `concurreny`. <br>
-Concurrency means that suppose more than 1 task making process, we can say that those tasks are concurrent.<br>
+Before we start, I want make some features clear. The term `parallelism` is different from `concurreny`. 
+Concurrency means that suppose more than 1 task making process, we can say that those tasks are concurrent.
 On the other hand, if you want to say parllelism, a system should be perform more than 1 task 'simultaneously'.<br>
-
-Our homework is parallel processing program. Also, it is task paralleism, but I will skip explaination about this.<Br>
-Program has 30 students score as a input, and should print out these scores.<br>
+<Br>
+Our homework is parallel processing program. Also, it is task paralleism, but I will skip explaination about this.Program has 30 students score as a input, and should print out these scores.<br>
 thread 1 prints average and sum of the scores, while thread 2 sorts the scores and print out.
